@@ -116,18 +116,25 @@ pipeline {
 
         stage('Deploy to Staging Env') {
             steps {
-                echo '### Cleaning existing resources in Staging ###'
+//                echo '### Cleaning existing resources in Staging ###'
+//                sh '''
+//                        oc project ${STAGE_PROJECT}
+//                        oc delete all -l app=${APP_NAME}
+//                        sleep 5
+//                   '''
+//
+//                echo '### Creating a new app in Staging ###'
+//                sh '''
+//                        oc project ${STAGE_PROJECT}
+//                        oc new-app --as-deployment-config --name books -i books:stage
+//                        oc expose svc/${APP_NAME}
+//                   '''
+//                echo '### Creating a new app in Staging ###'
+//
+                echo '### Replace app in Staging ###'
                 sh '''
                         oc project ${STAGE_PROJECT}
-                        oc delete all -l app=${APP_NAME}
-                        sleep 5
-                   '''
-
-                echo '### Creating a new app in Staging ###'
-                sh '''
-                        oc project ${STAGE_PROJECT}
-                        oc new-app --as-deployment-config --name books -i books:stage
-                        oc expose svc/${APP_NAME}
+                        oc rollout latest ${APP_NAME}
                    '''
             }
         }
