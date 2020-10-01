@@ -33,6 +33,13 @@ const books = [
     Author: 'William Faulkner',
     country: 'USA',
     yearPublished: '1929'
+  },
+  {
+    ranking: 6,
+    name: 'THE LIFE OF ENTAKU',
+    Author: 'William Faulkner',
+    country: 'JP',
+    yearPublished: '1979'
   }
 ];
 

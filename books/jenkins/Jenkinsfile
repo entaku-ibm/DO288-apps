@@ -134,7 +134,7 @@ pipeline {
                 echo '### Replace app in Staging ###'
                 sh '''
                         oc project ${STAGE_PROJECT}
-                        oc rollout latest ${APP_NAME}
+                        oc rollout latest dc/${APP_NAME}
                    '''
             }
         }
