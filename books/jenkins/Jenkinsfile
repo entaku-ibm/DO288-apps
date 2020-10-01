@@ -13,7 +13,7 @@ pipeline {
         //TODO: Edit these vars as per your env
         DEV_PROJECT = "entaku-jp-books-dev"
         STAGE_PROJECT = "entaku-jp-books-stage"
-        APP_GIT_URL = "https://github.com/entaku-ibm/DO288-apps"
+        APP_GIT_URL = "https://github.com/entaku-ibm/DO288-apps/tree/custom-pipeline"
         NEXUS_SERVER = "http://nexus-common.apps.ap45.prod.nextcle.com/repository/nodejs"
 
         // DO NOT CHANGE THE GLOBAL VARS BELOW THIS LINE
